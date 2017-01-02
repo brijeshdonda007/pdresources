@@ -1,0 +1,174 @@
+:focus {
+	outline-style:none;
+}
+.stylish-select ul.newList {
+	left:-9999px;
+}
+ul.newList * {
+	margin:0;
+	padding:0;
+}
+ul.newList a {
+	color: #6f6f6f;
+	text-decoration:none;
+	display:block;
+}
+ul.newList {
+	margin:0;
+	padding:0;
+	list-style:none;
+	color:#6f6f6f;
+	background:#fff;
+	position:absolute;
+	border:1px solid #ccc;
+	top:24px;
+	left:0;
+	overflow:auto;
+	z-index:9999;
+	display:block;
+	height:auto;
+}
+.newListSelected {
+	color:#6f6f6f;
+	padding:3px 0 0 6px;
+}
+.newListSelected span {
+	display:block;
+}
+ul.newList li a {
+	padding:3px 8px;
+	display: block;
+	cursor:pointer;
+}
+ul.newList li a:focus {
+	-moz-outline-style: none;
+	outline-style:none;
+}
+.selectedTxt {
+}
+.hiLite a {
+	background:#dddcdc !important;
+}
+.newListOptionTitle ul {
+	margin:3px 0 0;
+}
+.newListOptionTitle li {
+	font-weight:normal;
+	border-left:1px solid #ccc;
+}
+.newListSelected {
+	color:#626161;
+	height:29px;
+	margin-bottom:10px;
+	padding:0;
+	background:none;
+	width:auto;
+}
+.newListSelected div {
+	display:block;
+	padding:2px 5px;
+	width:auto;
+	line-height:25px;
+	color:#0b93e4;
+	cursor:pointer;
+}
+ul.newList {
+	padding:0;
+	margin:2px 0 0 0;
+	list-style:none;
+	color:#6f6f6f;
+	background:#fff;
+	border:1px solid #ccc;
+	top:24px;
+	left:0;
+	height:auto;
+	overflow:auto;
+	position:absolute;
+	z-index:9999;
+	display:block;
+	height:auto;
+	visibility:visible;
+	max-height:158px;
+}
+ul.newList li {
+	padding:2px 2px;
+}
+.hiLite {
+	background:#0b93e4 !important;
+	color:#fff!important;
+}
+.newListHover {
+	background:#dddcdc!important;
+	color:#6f6f6f!important;
+	cursor:default;
+}
+.newListSelHover {
+	cursor:default;
+}
+.newListSelHover, .newListSelFocus {
+	background-position:auto;
+}
+/* Combo My Cus */
+.combo_1_space, .combo_2_space, .combo_3_space, .combo_4_space, .combo_5_space, .combo_6_space, .combo_7_space{
+	height:29px;
+	font-size:14px;
+	text-align:left;
+	float:left;
+}
+.combo_3_space ul.newList, .combo_4_space ul.newList, .combo_5_space ul.newList, .combo_6_space ul.newList, .combo_7_space ul.newList  {
+	max-height:130px;
+}
+.combo1, .combo2, .combo3, .combo4, .combo5 , .combo6{
+	overflow:auto;
+}
+.combo_1_space {
+	background:url(../images/combo_1.png) no-repeat 0 0;
+	width:166px;
+}
+.combo1 {
+	width:164px !important;
+}
+.combo_2_space {
+	background:url(../images/combo_1.png) no-repeat 0 0;
+	width:166px;
+}
+.combo2 {
+	width:164px !important;
+}
+.combo_3_space {
+	background:url(../images/combo_1.png) no-repeat -178px 0;
+	width:96px;
+	margin-right:12px;
+}
+.combo3 {
+	width:94px !important;
+}
+.combo_4_space {
+	background:url(../images/combo_1.png) no-repeat -178px 0;
+	width:96px;
+	margin-right:12px;
+}
+.combo4 {
+	width:94px !important;
+}
+.combo_5_space {
+	background:url(../images/combo_1.png) no-repeat -286px 0;
+	width:86px;
+}
+.combo5 {
+	width:84px !important;
+}
+.combo_6_space{
+	background:url(../images/combo_2.png) no-repeat 0 0;
+	width:226px;
+}
+.combo6 {
+	width:224px; !important;
+}
+.combo_7_space{
+	background:url(../images/combo_2.png) no-repeat -238px 0;
+	width:186px;
+}
+.combo7 {
+	width:184px; !important;
+}

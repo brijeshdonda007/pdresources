@@ -1,0 +1,121 @@
+charset "utf-8";
+/* CSS Document */
+
+body, div, ol, ul, li, a, p, form, textarea, input, h1, h2, h3, h4, h5, h6, table, thead, tbody, th, tr, td{
+	padding:0px;
+	margin:0px;
+	word-wrap:break-word;
+}
+p{
+	margin:0px;
+	padding:0px;
+}
+
+body{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	color:#333333;
+	background:#f5f5f5;
+	margin:0px;
+	padding:0px;
+}
+
+a img, img {
+	border:none;
+}
+a {
+	cursor:pointer;
+	text-decoration:none;
+}
+.clear {
+	display:block;
+	height:0px;
+	clear:both;
+}
+ol, ul, li {
+	list-style:none;
+}
+input[type=button], input[type=submit], input[type=reset] {
+	outline:none;
+	cursor:pointer;
+}
+
+.layout{
+	width:1032px;
+	margin:auto;
+	background:#f5f5f5;
+	padding-bottom:75px;
+}
+.header{
+	height:244px;
+	background:url(../images/header.png) no-repeat 0 0;
+}
+
+.main_space{
+	padding:0px 60px 180px 60px;
+	background:#ffffff;
+}
+.image_holder{
+	border-bottom: 1px solid #252525;
+	padding-bottom: 40px;
+	display: block;
+}
+.image_holder img{
+	width: 172px;
+	height: 278px;
+	display:block;
+	float:left;
+	margin-right:20px;
+}
+
+.heading_text{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:32px;
+	color:#252525;
+	margin-bottom:8px;
+}
+.heading_text_boless{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:32px;
+	line-height:100%;
+	color:#252525;
+}
+.heading_text_margin{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:32px;
+	line-height:100%;
+	color:#252525;
+	margin:40px 0px 35px 0px;
+}
+.border_space{
+	display:block;
+}
+.book_space{
+	width:172px;
+	height:278px;
+	float:left;
+}
+.book_space img{
+	width:172px;
+	height:278px;
+}
+.book_detail_text{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:20px;
+	font-style:italic;
+	color:#252525;
+}
+.book_detail{
+	padding-left:20px;
+	width:800px;
+	float:left;
+}
+
+.sign{
+	width:553px;
+	height:76px;
+	margin-top:120px;
+	margin-bottom:25px;
+	background:url(../images/sign.png) no-repeat 0 0;
+}

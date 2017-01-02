@@ -1,0 +1,15 @@
+.my_error_1 .error{
+	background:url(../images/combo_1_error.png) no-repeat -178px 0 !important;	
+}
+.my_error_2 .error{
+	background:url(../images/combo_2_error.png) no-repeat 0 0 !important;	
+}
+.my_error_3 .error{
+	background:url(../images/combo_2_error.png) no-repeat -238px 0 !important;	
+}
+.my_error_4 .error{
+	background:url(../images/input_2_error.png) no-repeat 0 0 !important;	
+}
+.my_error_5 .error{
+	background:url(../images/input_2_error.png) no-repeat -352px 0 !important;	
+}

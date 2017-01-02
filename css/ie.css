@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+.part2_contnet_inner{
+
+	behavior: url(js/PIE.php);
+}
+.menu_space{
+	border-radius:10px 10px 0px 0px;
+	behavior: url(js/PIE.php);
+}

@@ -1,0 +1,5 @@
+.menu_space, img, .logo, .login_space, .footer_hook_1, .footer_hook_2, .footer, .home_thumb_new, .home_thumb_play, .home_thumb_mask, .home_list_btn_list, .home_list_btn_thumb, .home_slider_btn_next, .home_slider_btn_prev, .home_combo_space, .home_game_list_link {
+ behavior: expression((this.runtimeStyle.behavior="none")&&(this.pngSet?this.pngSet=true:(this.nodeName == "IMG" && this.src.toLowerCase().indexOf('.png')>-1?(this.runtimeStyle.backgroundImage = "none", this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.src + "', sizingMethod='image')", this.src='transparent.gif'):(this.origBg = this.origBg? this.origBg :this.currentStyle.backgroundImage.toString().replace('url("', '').replace('")', ''), this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.origBg + "', sizingMethod='crop')", this.runtimeStyle.backgroundImage = "none")), this.pngSet=true) );
+}
+.part_1, .part_2, .part_3 {float:left; width:965px; display:block;}
+.page {width:933px; float:left; display:block;}

@@ -1,0 +1,3 @@
+.page, .search_slider_space, .advertisement_1, .home_flash_space, .home_flash_space, .advertisement_1{
+	behavior: url(htc/ie-css3.htc);
+}

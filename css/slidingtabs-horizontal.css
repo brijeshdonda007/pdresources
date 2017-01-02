@@ -1,0 +1,622 @@
+/* 
+ * Sliding Tabs - jQuery Plugin
+ * Copyright 2011, Christian AndrÃ©
+ *
+ * CHANGING THE WIDTH: To change the width of the tabs layout see line 14, 87 and 135.
+ *
+------------------------------------------------------------------------------------- */
+
+div.st_horizontal { /* The main container */	
+	position:relative;	
+	z-index:1000;
+	float:left;
+	width:775px;
+	clear:both;
+	color:#616161;
+}
+
+/* Control buttons
+------------------------------------------------------------------------------------- */
+div.st_horizontal a.st_prev, 
+div.st_horizontal a.st_next { /* Directional buttons (previous/next) */
+	position:relative;	
+	z-index:110;
+	display:none;
+	float:left;
+	height:38px;
+	width:39px;
+	outline:none;
+}
+
+div.st_horizontal a.st_prev { /* Previous button */
+	background-position:13px 13px;
+}
+
+div.st_horizontal a.st_prev:hover { /* Previous button hover */	
+	background-position:-50px 13px;
+}
+
+div.st_horizontal a.st_next { /* Next button */
+	background-position:14px -14px;
+}
+
+div.st_horizontal a.st_next:hover { /* Next button hover */	
+	background-position:-49px -14px;
+}
+
+div.st_horizontal a.st_prev.st_btn_disabled, 
+div.st_horizontal a.st_next.st_btn_disabled { /* Previous and next buttons disabled state */
+	cursor:default;
+}
+
+div.st_horizontal a.st_prev.st_btn_disabled { /* Previous button disabled state */
+	background-position:-113px 13px;
+}
+
+div.st_horizontal a.st_next.st_btn_disabled { /* Next button disabled state */
+	background-position:-112px -14px;
+}
+
+/* Tabs
+------------------------------------------------------------------------------------- */
+div.st_horizontal div.st_tabs_container { /* Tabs main container */
+	position:relative;
+	z-index:100;
+	float:left;
+	width:100%;
+	height:40px;
+	overflow:hidden;
+}
+
+div.st_horizontal div.st_slide_container { /* Tabs slide-container */
+	position:relative !important; /* The tabs position will be calculated from ul.tabs first parent element with position:relative */
+	float:left;
+	width:693px; /* STEP 2: Changing the tabs width - The full width (775px) -minus border-left (1px) and the arrow buttons full width (40px + 41px = 81px) */ 
+}
+
+div.st_horizontal ul.st_tabs { /* Tabs unordered list */
+	width:10000px; /* Set to an arbitrary high value */
+	height:40px;
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+div.st_horizontal ul.st_tabs li { /* Tab list elements */
+	float:left;
+}
+
+div.st_horizontal ul.st_tabs li a { /* Tab links */
+	display:block;
+	margin:0px;
+	padding:10px 20px;
+	font-size:11px;
+	line-height:18px; /* Aligns the tabs to the bottom of the content container */
+	color:#6a6a6a;
+	text-decoration:none;
+	outline:none;
+}
+
+div.st_horizontal ul.st_tabs a:hover { /* Tabs hover state */
+	color:#333;
+}
+
+div.st_horizontal ul.st_tabs a.st_tab_active { /* Tab active/highlighted state */
+	color:#1ca5ec;
+}
+
+/* Content
+------------------------------------------------------------------------------------- */
+div.st_horizontal div.st_view_container { /* Main content container */
+	position:relative;
+	z-index:5;
+	float:left;
+	width:733px; /* STEP 3 (final): Changing the tabs width - The full width (775px) -minus the padding (40px) and borders (2px) */
+	height:278px;
+	overflow:hidden; /* To make the content scroll if Javascript is disabled, set to: auto */
+}
+
+div.st_horizontal div.st_view { /* Slide-container for the content */
+	position:relative;		
+	height:100%;
+}
+
+div.st_horizontal div.st_tab_view { /* Individual content containers */
+	width:100%;
+	margin-bottom:30px;
+	
+}
+
+/* Bottom aligned tabs
+------------------------------------------------------------------------------------- */
+div.st_horizontal.align_bottom { /* The main container */	
+	padding-bottom:39px; /* Use the height of the tabs container -minus the top border (1px) */
+}
+
+div.st_horizontal.align_bottom a.st_prev, 
+div.st_horizontal.align_bottom a.st_next { /* Directional buttons (previous/next) */
+}
+
+div.st_horizontal.align_bottom a.st_prev { /* Previous button */
+
+}
+
+div.st_horizontal.align_bottom a.st_next { /* Next button */
+
+}
+
+div.st_horizontal.align_bottom div.st_tabs_container { /* Tabs main container */
+	position:absolute; /* Absolute position the tabs container at the bottom of the main container */
+	bottom:0px;
+	left:0px;
+	margin-bottom:0px;
+}
+
+div.st_horizontal.align_bottom ul.st_tabs a.st_tab_active { /* Tab active/highlighted state */
+}
+
+/*===============================================================================================
+---------------------------- start whats new slider -----------------------------------------------
+===============================================================================================*/
+
+.whats_new_slider div.st_horizontal { /* The main container */	
+	position:relative;	
+	z-index:1000;
+	float:left;
+	width:960px;
+	clear:both;
+	color:#616161;
+}
+
+/* Control buttons
+------------------------------------------------------------------------------------- */
+.whats_new_slider div.st_horizontal a.st_prev, 
+.whats_new_slider div.st_horizontal a.st_next { /* Directional buttons (previous/next) */
+	position:absolute;	
+	z-index:110;
+	display:block;
+	float:none;
+	height:69px;
+	width:69px;
+	top:210px;
+	outline:none;
+}
+
+.whats_new_slider div.st_horizontal a.st_prev { /* Previous button */
+	background:url(../images/prev_btn.png) no-repeat 0 0;
+	background-position:0px 0px;
+	left:35px;
+}
+
+.whats_new_slider div.st_horizontal a.st_prev:hover { /* Previous button hover */	
+	background-position:0px 0px;
+	opacity:0.75;
+	filter:alpha(opacity=75);
+}
+
+.whats_new_slider div.st_horizontal a.st_next { /* Next button */
+	background:url(../images/next_btn.png) no-repeat 0 0;
+	background-position:0px 0px;
+	right:35px;
+}
+
+.whats_new_slider div.st_horizontal a.st_next:hover { /* Next button hover */	
+	background-position:0px 0px;
+	opacity:0.75;
+	filter:alpha(opacity=75);
+}
+
+.whats_new_slider div.st_horizontal a.st_prev.st_btn_disabled, 
+.whats_new_slider div.st_horizontal a.st_next.st_btn_disabled { /* Previous and next buttons disabled state */
+	cursor:default;
+	opacity:0.50;
+	filter:alpha(opacity=50);
+}
+
+.whats_new_slider div.st_horizontal a.st_prev.st_btn_disabled { /* Previous button disabled state */
+	background-position:0px 0px;
+}
+
+.whats_new_slider div.st_horizontal a.st_next.st_btn_disabled { /* Next button disabled state */
+	background-position:0px 0px;
+}
+
+/* Tabs
+------------------------------------------------------------------------------------- */
+.whats_new_slider div.st_horizontal .pagging_frame{
+	display:block;
+	margin:auto;
+	padding-top:20px;
+}
+.whats_new_slider div.st_horizontal div.st_tabs_container { /* Tabs main container */
+	position:relative;
+	z-index:100;
+	float:left;
+	width:100%;
+	height:10px;
+	overflow:hidden;
+}
+.whats_new_slider div.st_horizontal div.st_slide_container { /* Tabs slide-container */
+	position:relative !important; /* The tabs position will be calculated from ul.tabs first parent element with position:relative */
+	float:left;
+	width:100%; /* STEP 2: Changing the tabs width - The full width (775px) -minus border-left (1px) and the arrow buttons full width (40px + 41px = 81px) */ 
+}
+
+.whats_new_slider div.st_horizontal ul.st_tabs { /* Tabs unordered list */
+	width:10000px; /* Set to an arbitrary high value */
+	height:10px;
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+.whats_new_slider div.st_horizontal ul.st_tabs li { /* Tab list elements */
+	float:left;
+}
+
+.whats_new_slider div.st_horizontal ul.st_tabs li a { /* Tab links */
+	width:10px;
+	height:10px;
+	display:block;
+	margin:0px 10px 0 0;
+	padding:0px;
+	line-height:inherit; /* Aligns the tabs to the bottom of the content container */
+	color:#6a6a6a;
+	text-decoration:none;
+	outline:none;
+	background:url(../images/paging.png) no-repeat 0 0;
+}
+
+.whats_new_slider div.st_horizontal ul.st_tabs a:hover { /* Tabs hover state */
+	background:url(../images/paging.png) no-repeat 0 -10px;
+}
+
+.whats_new_slider div.st_horizontal ul.st_tabs a.st_tab_active { /* Tab active/highlighted state */
+	background:url(../images/paging.png) no-repeat 0 -10px;
+}
+
+/* Content
+------------------------------------------------------------------------------------- */
+.whats_new_slider div.st_horizontal div.st_view_container { /* Main content container */
+	position:relative;
+	z-index:5;
+	float:left;
+	width:715px; /* STEP 3 (final): Changing the tabs width - The full width (775px) -minus the padding (40px) and borders (2px) */
+	height:300px;
+	overflow:hidden; /* To make the content scroll if Javascript is disabled, set to: auto */
+	margin:80px 0px 0px 120px;
+}
+
+.whats_new_slider div.st_horizontal div.st_view { /* Slide-container for the content */
+	position:relative;		
+	height:100%;
+}
+
+.whats_new_slider div.st_horizontal div.st_tab_view { /* Individual content containers */
+	width:100%;
+	margin:0px;
+	
+}
+
+/*===============================================================================================
+---------------------------- start whats new slider -----------------------------------------------
+===============================================================================================*/
+/*===============================================================================================
+---------------------------- start te progress slider -----------------------------------------------
+===============================================================================================*/
+
+.te_slider_part div.st_horizontal { /* The main container */	
+	position:relative;	
+	z-index:1000;
+	float:left;
+	width:700px;
+	clear:both;
+	color:#616161;
+}
+
+/* Control buttons
+------------------------------------------------------------------------------------- */
+.te_slider_part div.st_horizontal a.st_prev, 
+.te_slider_part div.st_horizontal a.st_next { /* Directional buttons (previous/next) */
+	position:absolute;	
+	z-index:110;
+	display:block;
+	float:none;
+	height:69px;
+	width:69px;
+	top:210px;
+	outline:none;
+}
+
+.te_slider_part div.st_horizontal a.st_prev { /* Previous button */
+	background:url(../images/prev_btn.png) no-repeat 0 0;
+	background-position:0px 0px;
+	left:-85px;
+	top:110px;
+}
+
+.te_slider_part div.st_horizontal a.st_prev:hover { /* Previous button hover */	
+	background-position:0px 0px;
+	opacity:0.75;
+	filter:alpha(opacity=75);
+}
+
+.te_slider_part div.st_horizontal a.st_next { /* Next button */
+	background:url(../images/next_btn.png) no-repeat 0 0;
+	background-position:0px 0px;
+	right:-85px;
+	top:110px;
+}
+
+.te_slider_part div.st_horizontal a.st_next:hover { /* Next button hover */	
+	background-position:0px 0px;
+	opacity:0.75;
+	filter:alpha(opacity=75);
+}
+
+.te_slider_part div.st_horizontal a.st_prev.st_btn_disabled, 
+.te_slider_part div.st_horizontal a.st_next.st_btn_disabled { /* Previous and next buttons disabled state */
+	cursor:default;
+	opacity:0.50;
+	filter:alpha(opacity=50);
+}
+
+.te_slider_part div.st_horizontal a.st_prev.st_btn_disabled { /* Previous button disabled state */
+	background-position:0px 0px;
+}
+
+.te_slider_part div.st_horizontal a.st_next.st_btn_disabled { /* Next button disabled state */
+	background-position:0px 0px;
+}
+
+/* Tabs
+------------------------------------------------------------------------------------- */
+.te_slider_part div.st_horizontal .pagging_frame{
+	display:block;
+	margin:auto;
+	padding:0px;
+}
+.te_slider_part div.st_horizontal div.st_tabs_container { /* Tabs main container */
+	position:relative;
+	z-index:100;
+	float:left;
+	width:100%;
+	height:0px;
+	overflow:hidden;
+}
+.te_slider_part div.st_horizontal div.st_slide_container { /* Tabs slide-container */
+	position:relative !important; /* The tabs position will be calculated from ul.tabs first parent element with position:relative */
+	float:left;
+	width:100%; /* STEP 2: Changing the tabs width - The full width (775px) -minus border-left (1px) and the arrow buttons full width (40px + 41px = 81px) */ 
+}
+
+.te_slider_part div.st_horizontal ul.st_tabs { /* Tabs unordered list */
+	width:10000px; /* Set to an arbitrary high value */
+	height:0px;
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+.te_slider_part div.st_horizontal ul.st_tabs li { /* Tab list elements */
+	float:left;
+}
+
+.te_slider_part div.st_horizontal ul.st_tabs li a { /* Tab links */
+	width:10px;
+	height:10px;
+	display:block;
+	margin:0px 10px 0 0;
+	padding:0px;
+	line-height:inherit; /* Aligns the tabs to the bottom of the content container */
+	color:#6a6a6a;
+	text-decoration:none;
+	outline:none;
+	
+}
+
+.te_slider_part div.st_horizontal ul.st_tabs a:hover { /* Tabs hover state */
+	background:none;
+}
+
+.te_slider_part div.st_horizontal ul.st_tabs a.st_tab_active { /* Tab active/highlighted state */
+	background:none;
+}
+
+/* Content
+------------------------------------------------------------------------------------- */
+.te_slider_part div.st_horizontal div.st_view_container { /* Main content container */
+	position:relative;
+	z-index:5;
+	float:left;
+	width:700px; /* STEP 3 (final): Changing the tabs width - The full width (775px) -minus the padding (40px) and borders (2px) */
+	height:300px;
+	overflow:hidden; /* To make the content scroll if Javascript is disabled, set to: auto */
+	margin:0px;
+}
+
+.te_slider_part div.st_horizontal div.st_view { /* Slide-container for the content */
+	position:relative;		
+	height:100%;
+}
+
+.te_slider_part div.st_horizontal div.st_view span{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:36px;
+	color:#252525;
+	display:block;
+}
+
+.te_slider_part div.st_horizontal div.st_view a{
+	width:275px;
+	display:block;
+	margin-left: 50px;
+    margin-top: 30px;
+}
+
+.te_slider_part div.st_horizontal div.st_view em{
+	font-style:normal;
+	display:block;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:18px;
+	color:#333333;
+}
+
+.te_slider_part div.st_horizontal div.st_tab_view { /* Individual content containers */
+	width:100%;
+	margin:0px;
+	
+}
+
+/*===============================================================================================
+---------------------------- end te progress slider -----------------------------------------------
+===============================================================================================*/
+
+
+
+/*===============================================================================================
+---------------------------- start gallery slider -----------------------------------------------
+===============================================================================================*/
+
+.gellery_slider_space div.st_horizontal { /* The main container */	
+	position:relative;	
+	z-index:1000;
+	float:left;
+	width:896px;
+	clear:both;
+	color:#616161;
+}
+
+/* Control buttons
+------------------------------------------------------------------------------------- */
+.gellery_slider_space div.st_horizontal a.st_prev, 
+.gellery_slider_space div.st_horizontal a.st_next { /* Directional buttons (previous/next) */
+	position:absolute;	
+	z-index:110;
+	display:block;
+	float:none;
+	height:0px;
+	width:0px;
+	top:210px;
+	outline:none;
+}
+
+.gellery_slider_space div.st_horizontal a.st_prev { /* Previous button */
+	background-position:0px 0px;
+	left:35px;
+}
+
+.gellery_slider_space div.st_horizontal a.st_prev:hover { /* Previous button hover */	
+	background-position:0px 0px;
+	opacity:0.75;
+	filter:alpha(opacity=75);
+}
+
+.gellery_slider_space div.st_horizontal a.st_next { /* Next button */
+	background-position:0px 0px;
+	right:35px;
+}
+
+.gellery_slider_space div.st_horizontal a.st_next:hover { /* Next button hover */	
+	background-position:0px 0px;
+	opacity:0.75;
+	filter:alpha(opacity=75);
+}
+
+.gellery_slider_space div.st_horizontal a.st_prev.st_btn_disabled, 
+.gellery_slider_space div.st_horizontal a.st_next.st_btn_disabled { /* Previous and next buttons disabled state */
+	cursor:default;
+	opacity:0.50;
+	filter:alpha(opacity=50);
+}
+
+.gellery_slider_space div.st_horizontal a.st_prev.st_btn_disabled { /* Previous button disabled state */
+	background-position:0px 0px;
+}
+
+.gellery_slider_space div.st_horizontal a.st_next.st_btn_disabled { /* Next button disabled state */
+	background-position:0px 0px;
+}
+
+/* Tabs
+------------------------------------------------------------------------------------- */
+.gellery_slider_space div.st_horizontal .pagging_frame{
+	display:block;
+	padding:0px;
+	float:right;
+	margin-top:-25px;
+}
+.gellery_slider_space div.st_horizontal div.st_tabs_container { /* Tabs main container */
+	position:relative;
+	z-index:100;
+	float:left;
+	width:100%;
+	height:10px;
+	overflow:hidden;
+}
+.gellery_slider_space div.st_horizontal div.st_slide_container { /* Tabs slide-container */
+	position:relative !important; /* The tabs position will be calculated from ul.tabs first parent element with position:relative */
+	float:left;
+	width:100%; /* STEP 2: Changing the tabs width - The full width (775px) -minus border-left (1px) and the arrow buttons full width (40px + 41px = 81px) */ 
+}
+
+.gellery_slider_space div.st_horizontal ul.st_tabs { /* Tabs unordered list */
+	width:10000px; /* Set to an arbitrary high value */
+	height:10px;
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+.gellery_slider_space div.st_horizontal ul.st_tabs li { /* Tab list elements */
+	float:left;
+}
+
+.gellery_slider_space div.st_horizontal ul.st_tabs li a { /* Tab links */
+	width:10px;
+	height:10px;
+	display:block;
+	margin:0px 10px 0 0;
+	padding:0px;
+	line-height:inherit; /* Aligns the tabs to the bottom of the content container */
+	color:#6a6a6a;
+	text-decoration:none;
+	outline:none;
+	background:url(../images/paging.png) no-repeat 0 0;
+}
+
+.gellery_slider_space div.st_horizontal ul.st_tabs a:hover { /* Tabs hover state */
+	background:url(../images/paging.png) no-repeat 0 -10px;
+}
+
+.gellery_slider_space div.st_horizontal ul.st_tabs a.st_tab_active { /* Tab active/highlighted state */
+	background:url(../images/paging.png) no-repeat 0 -10px;
+}
+
+/* Content
+------------------------------------------------------------------------------------- */
+.gellery_slider_space div.st_horizontal div.st_view_container { /* Main content container */
+	position:relative;
+	z-index:5;
+	float:left;
+	width:896px; /* STEP 3 (final): Changing the tabs width - The full width (775px) -minus the padding (40px) and borders (2px) */
+/*	height:1900px;
+	min-height:1900px;
+*/	overflow:hidden; /* To make the content scroll if Javascript is disabled, set to: auto */
+	margin:0px;
+}
+
+.gellery_slider_space div.st_horizontal div.st_view { /* Slide-container for the content */
+	position:relative;		
+	height:100%;
+}
+
+.gellery_slider_space div.st_horizontal div.st_tab_view { /* Individual content containers */
+	width:100%;
+	margin:0px;
+	
+}
+
+/*===============================================================================================
+---------------------------- end gellery slider -----------------------------------------------
+===============================================================================================*/
